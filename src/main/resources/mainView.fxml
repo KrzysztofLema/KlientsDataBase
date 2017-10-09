@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="640.0" style="-fx-background-color: #172A6E;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="krzysztoflema.controllers.MainController">
+   <children>
+      <JFXButton fx:id="buttonClients" alignment="BOTTOM_CENTER" buttonType="RAISED" contentDisplay="TOP" defaultButton="true" graphicTextGap="0.0" layoutX="93.0" layoutY="236.0" prefHeight="97.0" prefWidth="125.0" ripplerFill="#09247c" style="-fx-background-color: #091953;" text="Klienci" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="75.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" x="10.0">
+               <image>
+                  <Image url="@images/iconmonstr-user-29-96.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="14.0" />
+         </font></JFXButton>
+   </children>
+</AnchorPane>

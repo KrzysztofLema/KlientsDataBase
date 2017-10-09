@@ -1,0 +1,33 @@
+package krzysztoflema.models.dao.daoImpl;
+
+import krzysztoflema.models.MySqlConnector;
+import krzysztoflema.models.dao.ClientDao;
+
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class ClientDaoImpl implements ClientDao {
+
+    private MySqlConnector connector = MySqlConnector.getInstace();
+
+    public boolean addClient(String name, String surname, String nip, String street, String city, String cityCode, String phone, String comments) {
+        try {
+            PreparedStatement statement = connector.getConnection().prepareStatement("INSERT INTO client VALUES (?,?,?,?,?,?,?,?,?)");
+            statement.setInt(1, 0);
+            statement.setString(2, name);
+            statement.setString(3, surname);
+            statement.setString(4, nip);
+            statement.setString(5, street);
+            statement.setString(6, city);
+            statement.setString(7, cityCode);
+            statement.setString(8, phone);
+            statement.setString(9, comments);
+            statement.execute();
+            statement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return false;
+    }
+}

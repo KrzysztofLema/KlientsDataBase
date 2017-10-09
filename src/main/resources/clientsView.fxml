@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="640.0" style="-fx-background-color: #172A6E;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="krzysztoflema.controllers.ClientsController">
+   <children>
+      <JFXButton fx:id="buttonAddClient" alignment="BOTTOM_CENTER" buttonType="RAISED" contentDisplay="TOP" layoutX="89.0" layoutY="30.0" prefHeight="116.0" prefWidth="139.0" ripplerFill="#09247c" style="-fx-background-color: #091953;" text="Dodaj Klienta" textFill="#f8f8f8">
+         <graphic>
+            <ImageView fitHeight="68.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/iconmonstr-user-8-96.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton alignment="BOTTOM_CENTER" buttonType="RAISED" contentDisplay="TOP" layoutX="262.0" layoutY="30.0" prefHeight="116.0" prefWidth="139.0" ripplerFill="#09247c" style="-fx-background-color: #091953;" text="Usuń Klienta" textFill="#f8f8f8">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="68.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/iconmonstr-user-12-96.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton alignment="BOTTOM_CENTER" buttonType="RAISED" contentDisplay="TOP" layoutX="430.0" layoutY="30.0" prefHeight="116.0" prefWidth="139.0" ripplerFill="#09247c" style="-fx-background-color: #091953;" text="Wyświetl wszystkich" textAlignment="CENTER" textFill="#f8f8f8" wrapText="true">
+         <graphic>
+            <ImageView fitHeight="58.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/iconmonstr-user-29-96.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
