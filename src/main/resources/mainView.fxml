@@ -9,9 +9,9 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="640.0" style="-fx-background-color: #172A6E;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="krzysztoflema.controllers.MainController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="krzysztoflema.controllers.MainController">
    <children>
-      <JFXButton fx:id="buttonClients" alignment="BOTTOM_CENTER" buttonType="RAISED" contentDisplay="TOP" defaultButton="true" graphicTextGap="0.0" layoutX="93.0" layoutY="236.0" prefHeight="97.0" prefWidth="125.0" ripplerFill="#09247c" style="-fx-background-color: #091953;" text="Klienci" textFill="WHITE">
+      <JFXButton fx:id="buttonClients" alignment="BOTTOM_CENTER" buttonType="RAISED" contentDisplay="TOP" defaultButton="true" graphicTextGap="0.0" layoutX="96.0" layoutY="201.0" prefHeight="97.0" prefWidth="125.0" ripplerFill="#09247c" style="-fx-background-color: #091953;" text="Klienci" textFill="WHITE">
          <graphic>
             <ImageView fitHeight="75.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" x="10.0">
                <image>
@@ -21,6 +21,7 @@
          </graphic>
          <font>
             <Font size="14.0" />
-         </font></JFXButton>
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

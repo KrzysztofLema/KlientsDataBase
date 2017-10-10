@@ -33,7 +33,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton alignment="BOTTOM_CENTER" buttonType="RAISED" contentDisplay="TOP" layoutX="430.0" layoutY="30.0" prefHeight="116.0" prefWidth="139.0" ripplerFill="#09247c" style="-fx-background-color: #091953;" text="Wyświetl wszystkich" textAlignment="CENTER" textFill="#f8f8f8" wrapText="true">
+      <JFXButton fx:id="buttonShowAllClients" alignment="BOTTOM_CENTER" buttonType="RAISED" contentDisplay="TOP" layoutX="430.0" layoutY="30.0" prefHeight="116.0" prefWidth="139.0" ripplerFill="#09247c" style="-fx-background-color: #091953;" text="Wyświetl wszystkich" textAlignment="CENTER" textFill="#f8f8f8" wrapText="true">
          <graphic>
             <ImageView fitHeight="58.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
                <image>

@@ -1,10 +1,16 @@
 package krzysztoflema.models.dao.daoImpl;
 
+
+import krzysztoflema.models.ClientModel;
 import krzysztoflema.models.MySqlConnector;
 import krzysztoflema.models.dao.ClientDao;
-
 import java.sql.PreparedStatement;
+
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class ClientDaoImpl implements ClientDao {
 
@@ -30,4 +36,23 @@ public class ClientDaoImpl implements ClientDao {
 
         return false;
     }
+
+    @Override
+    public List<ClientModel> getAllClients() {
+
+        List<ClientModel> clientModels = new ArrayList<ClientModel>();
+        try {
+            PreparedStatement statement = connector.getConnection().prepareStatement("SELECT name,surname,nip FROM client");
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()){
+                clientModels.add(new ClientModel(resultSet.getString("name"),resultSet.getString("surname"),resultSet.getString("nip")));
+            }
+            statement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return clientModels;
+    }
+
 }

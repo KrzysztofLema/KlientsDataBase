@@ -17,7 +17,7 @@ import java.util.ResourceBundle;
 public class ClientsController implements Initializable {
 
     @FXML
-    JFXButton buttonAddClient;
+    JFXButton buttonAddClient, buttonShowAllClients;
 
     public void initialize(URL location, ResourceBundle resources) {
       buttonAddClient.setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -26,6 +26,17 @@ public class ClientsController implements Initializable {
                   Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("clientsAddView.fxml"));
                   Stage stageRoot=(Stage) buttonAddClient.getScene().getWindow();
                   stageRoot.setScene(new Scene(root,640, 480));
+              } catch (IOException e) {
+                  e.printStackTrace();
+              }
+          }
+      });
+      buttonShowAllClients.setOnMouseClicked(new EventHandler<MouseEvent>() {
+          public void handle(MouseEvent event) {
+              try {
+                  Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("clientsShowAllView.fxml"));
+                  Stage stageRoot=(Stage) buttonShowAllClients.getScene().getWindow();
+                  stageRoot.setScene(new Scene(root,640,480));
               } catch (IOException e) {
                   e.printStackTrace();
               }
