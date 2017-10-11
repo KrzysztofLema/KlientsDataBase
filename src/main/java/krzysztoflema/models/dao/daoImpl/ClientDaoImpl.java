@@ -4,6 +4,7 @@ package krzysztoflema.models.dao.daoImpl;
 import krzysztoflema.models.ClientModel;
 import krzysztoflema.models.MySqlConnector;
 import krzysztoflema.models.dao.ClientDao;
+
 import java.sql.PreparedStatement;
 
 import java.sql.ResultSet;
@@ -42,17 +43,40 @@ public class ClientDaoImpl implements ClientDao {
 
         List<ClientModel> clientModels = new ArrayList<ClientModel>();
         try {
-            PreparedStatement statement = connector.getConnection().prepareStatement("SELECT name,surname,nip FROM client");
+            PreparedStatement statement = connector.getConnection().prepareStatement(
+                    "SELECT * FROM client");
             ResultSet resultSet = statement.executeQuery();
-            while (resultSet.next()){
-                clientModels.add(new ClientModel(resultSet.getString("name"),resultSet.getString("surname"),resultSet.getString("nip")));
+            while (resultSet.next()) {
+                clientModels.add(new ClientModel(
+                        resultSet.getString("name"),
+                        resultSet.getString("surname"),
+                        resultSet.getString("nip"),
+                        resultSet.getString("street"),
+                        resultSet.getString("city"),
+                        resultSet.getString("cityCode"),
+                        resultSet.getString("phoneNumber")));
             }
             statement.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         return clientModels;
+    }
+
+
+    @Override
+    public boolean removeClient(String name, String nip) {
+        try {
+            PreparedStatement statement = connector.getConnection().prepareStatement(
+                    "DELETE FROM client WHERE name=? AND nip=?");
+            statement.setString(1, name);
+            statement.setString(2,nip);
+            statement.execute();
+            statement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 
 }

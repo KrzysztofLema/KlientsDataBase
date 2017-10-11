@@ -17,17 +17,15 @@ public class ClientModel extends RecursiveTreeObject<ClientModel> {
     StringProperty phoneNumber;
     StringProperty comments;
 
-    public ClientModel(String name, String surname, String nip
-// , String street, String city, String cityCode, String phoneNumber, String comments
- ) {
+    public ClientModel(String name, String surname, String nip, String street, String city, String cityCode, String phoneNumber) {
         this.name = new SimpleStringProperty(name);
         this.surname = new SimpleStringProperty(surname);
         this.nip = new SimpleStringProperty(nip);
-//        this.street = new SimpleStringProperty(street);
-//        this.city = new SimpleStringProperty(city);
-//        this.cityCode = new SimpleStringProperty(cityCode);
-//        this.phoneNumber = new SimpleStringProperty(phoneNumber);
-//        this.comments = new SimpleStringProperty(comments);
+        this.street = new SimpleStringProperty(street);
+        this.city = new SimpleStringProperty(city);
+        this.cityCode = new SimpleStringProperty(cityCode);
+        this.phoneNumber = new SimpleStringProperty(phoneNumber);
+
     }
 
     public String getName() {

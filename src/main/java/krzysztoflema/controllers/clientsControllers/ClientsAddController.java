@@ -1,14 +1,10 @@
-package krzysztoflema.controllers;
+package krzysztoflema.controllers.clientsControllers;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
 import krzysztoflema.models.dao.ClientDao;
 import krzysztoflema.models.dao.daoImpl.ClientDaoImpl;
 
@@ -30,24 +26,16 @@ public class ClientsAddController implements Initializable {
 
     public void initialize(URL location, ResourceBundle resources) {
 
-        buttonSave.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            public void handle(MouseEvent event) {
-               addClient();
-            }
-        });
-
-
-        buttonClear.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            public void handle(MouseEvent event) {
-                clearAll();
-            }
-        });
+        buttonSave.setOnMouseClicked(event -> addClient());
+        buttonClear.setOnMouseClicked(event -> clearAll());
 
     }
 
     private void addClient() {
+
         clientDao.addClient(textFieldName.getText(), textFieldSurname.getText(), textFieldNip.getText(), textFieldStreet.getText(),
                 textFieldCity.getText(), textFieldCityCode.getText(), textFieldPhone.getText(), textAreaComments.getText());
+        clearAll();
     }
 
     private void clearAll() {

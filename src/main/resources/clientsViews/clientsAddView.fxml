@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="krzysztoflema.controllers.clientsControllers.ClientsAddController">
+   <children>
+      <JFXTextField fx:id="textFieldName" alignment="CENTER" focusColor="#e2e4eb" layoutX="299.0" layoutY="208.0" promptText="Imię" unFocusColor="#6172af">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="textFieldSurname" alignment="CENTER" focusColor="#e2e4eb" layoutX="299.0" layoutY="272.0" promptText="Nazwisko" unFocusColor="#6172af">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="textFieldNip" alignment="CENTER" focusColor="#e2e4eb" layoutX="299.0" layoutY="339.0" promptText="Nip" unFocusColor="#6172af">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="textFieldCityCode" alignment="CENTER" focusColor="#e2e4eb" layoutX="492.0" layoutY="339.0" promptText="Kod pocztowy" unFocusColor="#6172af">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="textFieldCity" alignment="CENTER" focusColor="#e2e4eb" layoutX="492.0" layoutY="272.0" promptText="Miasto" unFocusColor="#6172af">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="textFieldStreet" alignment="CENTER" focusColor="#fcfcfc" layoutX="492.0" layoutY="209.0" promptText="Ulica" unFocusColor="#6172af">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="textFieldPhone" focusColor="#f5f5f5" layoutX="684.0" layoutY="209.0" promptText="Telefon" unFocusColor="#6172af">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextArea fx:id="textAreaComments" focusColor="WHITE" layoutX="669.0" layoutY="253.0" prefHeight="111.0" prefWidth="187.0" promptText="Uwagi" unFocusColor="#6172af" />
+      <JFXButton fx:id="buttonShowAllClients" alignment="BOTTOM_CENTER" buttonType="RAISED" contentDisplay="TOP" layoutX="32.0" layoutY="347.0" prefHeight="116.0" prefWidth="139.0" ripplerFill="#09247c" style="-fx-background-color: #091953;" text="Wyświetl wszystkich" textAlignment="CENTER" textFill="#f8f8f8" wrapText="true">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="58.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/iconmonstr-user-29-96.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="buttonDeleteClient" alignment="BOTTOM_CENTER" buttonType="RAISED" contentDisplay="TOP" layoutX="32.0" layoutY="184.0" prefHeight="116.0" prefWidth="139.0" ripplerFill="#09247c" style="-fx-background-color: #091953;" text="Usuń Klienta" textFill="#f8f8f8">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="68.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/iconmonstr-user-12-96.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="buttonAddClient" alignment="BOTTOM_CENTER" buttonType="RAISED" contentDisplay="TOP" layoutX="32.0" layoutY="30.0" prefHeight="116.0" prefWidth="139.0" ripplerFill="#09247c" style="-fx-background-color: #091953;" text="Dodaj Klienta" textFill="#f8f8f8">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="68.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/iconmonstr-user-8-96.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="buttonSave" buttonType="RAISED" layoutX="711.0" layoutY="392.0" prefHeight="25.0" prefWidth="139.0" style="-fx-background-color: #091953;" text="Zapisz" />
+      <JFXButton fx:id="buttonClear" buttonType="RAISED" layoutX="550.0" layoutY="392.0" prefHeight="25.0" prefWidth="139.0" style="-fx-background-color: #091953;" text="Wyczyść" />
+   </children>
+</AnchorPane>

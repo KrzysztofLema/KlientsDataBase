@@ -1,4 +1,4 @@
-package krzysztoflema.controllers;
+package krzysztoflema.controllers.clientsControllers;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.event.EventHandler;
@@ -17,15 +17,16 @@ import java.util.ResourceBundle;
 public class ClientsController implements Initializable {
 
     @FXML
-    JFXButton buttonAddClient, buttonShowAllClients;
+    JFXButton buttonAddClient, buttonShowAllClients,buttonDeleteClient;
 
     public void initialize(URL location, ResourceBundle resources) {
+
       buttonAddClient.setOnMouseClicked(new EventHandler<MouseEvent>() {
           public void handle(MouseEvent event) {
               try {
-                  Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("clientsAddView.fxml"));
+                  Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("clientsViews/clientsAddView.fxml"));
                   Stage stageRoot=(Stage) buttonAddClient.getScene().getWindow();
-                  stageRoot.setScene(new Scene(root,640, 480));
+                  stageRoot.setScene(new Scene(root,1000, 700));
               } catch (IOException e) {
                   e.printStackTrace();
               }
@@ -34,9 +35,22 @@ public class ClientsController implements Initializable {
       buttonShowAllClients.setOnMouseClicked(new EventHandler<MouseEvent>() {
           public void handle(MouseEvent event) {
               try {
-                  Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("clientsShowAllView.fxml"));
+                  Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("clientsViews/clientsShowAllView.fxml"));
                   Stage stageRoot=(Stage) buttonShowAllClients.getScene().getWindow();
-                  stageRoot.setScene(new Scene(root,640,480));
+                  stageRoot.setScene(new Scene(root,1000,700));
+              } catch (IOException e) {
+                  e.printStackTrace();
+              }
+          }
+      });
+
+      buttonDeleteClient.setOnMouseClicked(new EventHandler<MouseEvent>() {
+          @Override
+          public void handle(MouseEvent event) {
+              try {
+                  Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("clientsViews/clientsDeleteView.fxml"));
+                  Stage stageRoot=(Stage) buttonDeleteClient.getScene().getWindow();
+                  stageRoot.setScene(new Scene(root,1000,700));
               } catch (IOException e) {
                   e.printStackTrace();
               }
