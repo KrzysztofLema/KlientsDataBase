@@ -5,6 +5,7 @@ import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import krzysztoflema.Utils;
 import krzysztoflema.models.dao.ClientDao;
 import krzysztoflema.models.dao.daoImpl.ClientDaoImpl;
 
@@ -31,10 +32,20 @@ public class ClientsAddController implements Initializable {
 
     }
 
-    private void addClient() {
+    private boolean checkClientsData() {
+        if (textFieldName.getText().length() < 3 || textFieldSurname.getText().length() < 3) {
+            Utils.createSimpleDialog("Uwaga", "Nieprawidłowo wprowadzone dane", "Dane nie mogą być krótsze niz 3 litery");
+            return false;
+        }
+        return true;
+    }
 
-        clientDao.addClient(textFieldName.getText(), textFieldSurname.getText(), textFieldNip.getText(), textFieldStreet.getText(),
-                textFieldCity.getText(), textFieldCityCode.getText(), textFieldPhone.getText(), textAreaComments.getText());
+    private void addClient() {
+        if (!checkClientsData()) {
+            clientDao.addClient(textFieldName.getText(), textFieldSurname.getText(), textFieldNip.getText(), textFieldStreet.getText(),
+                    textFieldCity.getText(), textFieldCityCode.getText(), textFieldPhone.getText(), textAreaComments.getText());
+
+        }
         clearAll();
     }
 
@@ -48,4 +59,5 @@ public class ClientsAddController implements Initializable {
         textFieldPhone.setText(null);
         textAreaComments.setText(null);
     }
+
 }
