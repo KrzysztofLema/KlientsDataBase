@@ -28,9 +28,9 @@ public class MainController implements Initializable {
         buttonClients.setOnMouseClicked(new EventHandler<MouseEvent>() {
             public void handle(MouseEvent event) {
                 try {
-                    Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("clientsViews/clientsView.fxml"));
+                    Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("clientsViews/clientsShowAllView.fxml"));
                     Stage stageRoot = (Stage) buttonClients.getScene().getWindow();
-                    stageRoot.setScene(new Scene(root,640, 480));
+                    stageRoot.setScene(new Scene(root,1000, 740));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

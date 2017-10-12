@@ -1,9 +1,6 @@
 package krzysztoflema.controllers.clientsControllers;
 
-import com.jfoenix.controls.JFXTextField;
-import com.jfoenix.controls.JFXTreeTableColumn;
-import com.jfoenix.controls.JFXTreeTableView;
-import com.jfoenix.controls.RecursiveTreeItem;
+import com.jfoenix.controls.*;
 import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -16,7 +13,7 @@ import krzysztoflema.models.dao.daoImpl.ClientDaoImpl;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.function.Predicate;
+
 
 public class ClientsShowAllController implements Initializable {
 
@@ -26,21 +23,37 @@ public class ClientsShowAllController implements Initializable {
     JFXTreeTableView<ClientModel> treeView;
     @FXML
     JFXTextField textFieldFilter;
+    @FXML
+    JFXButton buttonDeleteClient;
 
     private ObservableList<ClientModel> observableList;
 
     public void initialize(URL location, ResourceBundle resources) {
         showTable();
         searchName();
+        loadContacts();
+        deleteContact();
+
+    }
+
+    private void deleteContact() {
+        buttonDeleteClient.setOnMouseClicked(event -> {
+            clientDao.removeClient(treeView.getSelectionModel().getSelectedItem().getValue().getName(), treeView.getSelectionModel().getSelectedItem().getValue().getNip());
+            loadContacts();
+        });
+    }
+
+    private void loadContacts() {
+        ObservableList<ClientModel> clients = FXCollections.observableArrayList(clientDao.getAllClients());
+        final TreeItem<ClientModel> root = new RecursiveTreeItem<ClientModel>(clients, RecursiveTreeObject::getChildren);
+        treeView.setRoot(root);
+        treeView.setShowRoot(false);
     }
 
     private void searchName() {
-        textFieldFilter.textProperty().addListener((observable, oldValue, newValue) -> treeView.setPredicate(new Predicate<TreeItem<ClientModel>>() {
-            @Override
-            public boolean test(TreeItem<ClientModel> client) {
-                Boolean flag = client.getValue().getName().contains(newValue);
-                return flag;
-            }
+        textFieldFilter.textProperty().addListener((observable, oldValue, newValue) -> treeView.setPredicate(client -> {
+            Boolean flag = client.getValue().getName().contains(newValue);
+            return flag;
         }));
     }
 
@@ -73,14 +86,8 @@ public class ClientsShowAllController implements Initializable {
         phoneNumberColumn.setPrefWidth(100);
         phoneNumberColumn.setCellValueFactory(param -> param.getValue().getValue().phoneNumberProperty());
 
-
-        ObservableList<ClientModel> clients = FXCollections.observableArrayList(clientDao.getAllClients());
-
-
-        final TreeItem<ClientModel> root = new RecursiveTreeItem<ClientModel>(clients, RecursiveTreeObject::getChildren);
         treeView.getColumns().setAll(nameColumn, surnameColumn, nipColumn, streetColumn, cityColumn, cityCodeColumn, phoneNumberColumn);
-        treeView.setRoot(root);
-        treeView.setShowRoot(false);
+
     }
 
 

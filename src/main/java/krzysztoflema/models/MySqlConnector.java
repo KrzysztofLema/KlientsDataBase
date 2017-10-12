@@ -31,7 +31,7 @@ public class MySqlConnector {
             connection =
                     DriverManager.getConnection(SQL_LINK, SQL_USER, SQL_PASSWORD);
             System.out.println("Połączono");
-        } catch (SQLException e) {
+                    } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
