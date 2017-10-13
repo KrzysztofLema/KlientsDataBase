@@ -9,7 +9,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="krzysztoflema.controllers.clientsControllers.ClientsShowAllController">
    <children>
-      <JFXButton fx:id="buttonAddClient" alignment="BOTTOM_CENTER" buttonType="RAISED" contentDisplay="TOP" layoutX="16.0" layoutY="5.0" prefHeight="60.0" prefWidth="240.0" ripplerFill="#09247c" style="-fx-background-color: #091953;" text="Dodaj Klienta" textFill="#f8f8f8">
+      <JFXButton fx:id="buttonAddClient" alignment="BOTTOM_CENTER" buttonType="RAISED" contentDisplay="TOP" layoutX="167.0" layoutY="6.0" prefHeight="60.0" prefWidth="240.0" ripplerFill="#09247c" style="-fx-background-color: #091953;" text="Dodaj Klienta" textFill="#f8f8f8">
          <graphic>
             <ImageView fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -21,7 +21,7 @@
             <Font size="14.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="buttonDeleteClient" alignment="BOTTOM_CENTER" buttonType="RAISED" contentDisplay="TOP" layoutX="277.0" layoutY="6.0" prefHeight="60.0" prefWidth="240.0" ripplerFill="#09247c" style="-fx-background-color: #091953;" text="Usuń Klienta" textFill="#f8f8f8">
+      <JFXButton fx:id="buttonDeleteClient" alignment="BOTTOM_CENTER" buttonType="RAISED" contentDisplay="TOP" layoutX="744.0" layoutY="612.0" prefHeight="60.0" prefWidth="240.0" ripplerFill="#09247c" style="-fx-background-color: #091953;" text="Usuń Klienta" textFill="#f8f8f8">
          <font>
             <Font size="14.0" />
          </font>
@@ -33,7 +33,13 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXTreeTableView fx:id="treeView" layoutX="16.0" layoutY="87.0" prefHeight="554.0" prefWidth="968.0" stylesheets="@../main.css" />
+      <JFXTreeTableView fx:id="treeView" layoutX="16.0" layoutY="87.0" prefHeight="507.0" prefWidth="968.0" stylesheets="@../main.css" />
       <JFXTextField fx:id="textFieldFilter" layoutX="786.0" layoutY="43.0" prefHeight="29.0" prefWidth="200.0" />
+      <JFXButton fx:id="buttonBack" layoutX="16.0" layoutY="14.0" prefHeight="63.0" prefWidth="134.0" text="Wstecz" />
+      <JFXButton fx:id="buttonClientEdit" alignment="BOTTOM_CENTER" buttonType="RAISED" contentDisplay="TOP" layoutX="435.0" layoutY="6.0" prefHeight="60.0" prefWidth="240.0" ripplerFill="#09247c" style="-fx-background-color: #091953;" text="Edytuj klienta" textFill="#f8f8f8">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

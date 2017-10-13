@@ -79,4 +79,10 @@ public class ClientDaoImpl implements ClientDao {
         return false;
     }
 
+    @Override
+    public boolean editClient(String name) {
+
+        return false;
+    }
+
 }
