@@ -123,5 +123,19 @@ public class ClientModel extends RecursiveTreeObject<ClientModel> {
     public void setComments(String comments) {
         this.comments.set(comments);
     }
+
+    @Override
+    public String toString() {
+        return "ClientModel{" +
+                "name=" + name +
+                ", surname=" + surname +
+                ", nip=" + nip +
+                ", street=" + street +
+                ", city=" + city +
+                ", cityCode=" + cityCode +
+                ", phoneNumber=" + phoneNumber +
+                ", comments=" + comments +
+                '}';
+    }
 }
 

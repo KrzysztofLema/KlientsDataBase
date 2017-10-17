@@ -1,15 +1,14 @@
 package krzysztoflema.models;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+        import java.sql.Connection;
+        import java.sql.DriverManager;
+        import java.sql.SQLException;
 
 public class MySqlConnector {
-    private static final String SQL_LINK = "jdbc:mysql://...:3306/maniu_krzlema";
+    private static final String SQL_LINK = "jdbc:mysql://.../maniu_krzlema?serverTimezone=UTC";
     private static final String SQL_USER = "...";
     private static final String SQL_PASSWORD = "...";
-    private static final String SQL_CLASS = "com.mysql.jdbc.Driver";
-
+    private static final String SQL_CLASS = "com.mysql.cj.jdbc.Driver";
 
 
     private static MySqlConnector connector = new MySqlConnector();
@@ -28,10 +27,13 @@ public class MySqlConnector {
     private void connect() {
         try {
             Class.forName(SQL_CLASS);
+
             connection =
                     DriverManager.getConnection(SQL_LINK, SQL_USER, SQL_PASSWORD);
+            
             System.out.println("Połączono");
-                    } catch (SQLException e) {
+
+        } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();

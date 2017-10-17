@@ -5,8 +5,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import krzysztoflema.controllers.clientsControllers.ClientsAddController;
-import krzysztoflema.controllers.clientsControllers.ClientsShowAllController;
 
 public class Main extends Application {
 

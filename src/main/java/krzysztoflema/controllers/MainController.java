@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import krzysztoflema.models.MySqlConnector;
 import krzysztoflema.models.dao.ClientDao;
 import krzysztoflema.models.dao.daoImpl.ClientDaoImpl;
 
@@ -19,6 +20,7 @@ import java.util.ResourceBundle;
 public class MainController implements Initializable {
 
     ClientDao clientDao = new ClientDaoImpl();
+    MySqlConnector connector = MySqlConnector.getInstace();
 
     @FXML
     private JFXButton buttonClients;
@@ -26,9 +28,11 @@ public class MainController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
         buttonClients.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
             public void handle(MouseEvent event) {
                 try {
-                    Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("clientsViews/clientsShowAllView.fxml"));
+                    connector.getConnection();
+                    Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("clientsViews/clientsShowAllView11.fxml"));
                     Stage stageRoot = (Stage) buttonClients.getScene().getWindow();
                     stageRoot.setScene(new Scene(root,1000, 740));
                 } catch (IOException e) {
