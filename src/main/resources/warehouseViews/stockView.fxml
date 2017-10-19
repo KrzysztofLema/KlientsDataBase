@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="krzysztoflema.controllers.stockControllers.stockController">
+   <children>
+      <JFXTreeTableView fx:id="treeTableStock" layoutX="15.0" layoutY="88.0" prefHeight="537.0" prefWidth="275.0" />
+      <JFXButton fx:id="buttonBack" buttonType="RAISED" focusTraversable="false" layoutX="24.0" layoutY="24.0" prefHeight="60.0" prefWidth="127.0" text="Cofnij" />
+      <JFXButton fx:id="buttonAddSupply" buttonType="RAISED" focusTraversable="false" layoutX="174.0" layoutY="24.0" prefHeight="60.0" prefWidth="146.0" text="Dodaj dostawę" />
+      <JFXButton fx:id="buttonEdit" buttonType="RAISED" focusTraversable="false" layoutX="773.0" layoutY="646.0" prefHeight="28.0" prefWidth="94.0" text="Edytuj" />
+      <JFXButton fx:id="buttonDeleteSupply" buttonType="RAISED" focusTraversable="false" layoutX="873.0" layoutY="642.0" prefHeight="36.0" prefWidth="94.0" text="Usuń klienta" />
+      <JFXTreeTableView fx:id="treeTableProducts" layoutX="302.0" layoutY="88.0" prefHeight="537.0" prefWidth="675.0" />
+   </children>
+</AnchorPane>

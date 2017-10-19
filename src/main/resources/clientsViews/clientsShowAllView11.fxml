@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane fx:id="stackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="krzysztoflema.controllers.clientsControllers.ClientsController">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0">
+         <children>
+            <JFXButton fx:id="buttonAddClient" buttonType="RAISED" focusTraversable="false" layoutX="164.0" layoutY="14.0" prefHeight="60.0" prefWidth="146.0" text="Dodaj klienta" />
+            <JFXButton fx:id="buttonBack" buttonType="RAISED" focusTraversable="false" layoutX="14.0" layoutY="14.0" prefHeight="60.0" prefWidth="127.0" text="Cofnij" />
+            <JFXButton fx:id="buttonDeleteClient" buttonType="RAISED" focusTraversable="false" layoutX="894.0" layoutY="646.0" prefHeight="36.0" prefWidth="94.0" text="Usuń klienta" />
+            <JFXTreeTableView fx:id="treeView" focusTraversable="false" layoutX="15.0" layoutY="88.0" prefHeight="537.0" prefWidth="970.0" />
+            <JFXTextField fx:id="textFieldFilter" focusTraversable="false" layoutX="802.0" layoutY="32.0" prefHeight="36.0" prefWidth="184.0" />
+            <JFXButton fx:id="buttonEdit" buttonType="RAISED" focusTraversable="false" layoutX="776.0" layoutY="650.0" prefHeight="28.0" prefWidth="94.0" text="Edytuj" />
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
