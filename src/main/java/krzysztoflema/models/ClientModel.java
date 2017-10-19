@@ -17,7 +17,7 @@ public class ClientModel extends RecursiveTreeObject<ClientModel> {
     StringProperty phoneNumber;
     StringProperty comments;
 
-    public ClientModel(String name, String surname, String nip, String street, String city, String cityCode, String phoneNumber) {
+    public ClientModel(String name, String surname, String nip, String street, String city, String cityCode, String phoneNumber,String comments) {
         this.name = new SimpleStringProperty(name);
         this.surname = new SimpleStringProperty(surname);
         this.nip = new SimpleStringProperty(nip);
@@ -25,6 +25,7 @@ public class ClientModel extends RecursiveTreeObject<ClientModel> {
         this.city = new SimpleStringProperty(city);
         this.cityCode = new SimpleStringProperty(cityCode);
         this.phoneNumber = new SimpleStringProperty(phoneNumber);
+        this.comments = new SimpleStringProperty(comments);
 
     }
 

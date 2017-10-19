@@ -23,18 +23,29 @@ public class MainController implements Initializable {
     MySqlConnector connector = MySqlConnector.getInstace();
 
     @FXML
-    private JFXButton buttonClients;
+    private JFXButton buttonClients, buttonWarehouse;
 
     public void initialize(URL location, ResourceBundle resources) {
 
         buttonClients.setOnMouseClicked(new EventHandler<MouseEvent>() {
-
             public void handle(MouseEvent event) {
                 try {
-                    connector.getConnection();
                     Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("clientsViews/clientsShowAllView11.fxml"));
                     Stage stageRoot = (Stage) buttonClients.getScene().getWindow();
                     stageRoot.setScene(new Scene(root,1000, 740));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        buttonWarehouse.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                try {
+                    Parent root =FXMLLoader.load(getClass().getClassLoader().getResource("warehouseViews/stockView.fxml"));
+                    Stage stageRoot=(Stage) buttonWarehouse.getScene().getWindow();
+                    stageRoot.setScene(new Scene(root,1000,740));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

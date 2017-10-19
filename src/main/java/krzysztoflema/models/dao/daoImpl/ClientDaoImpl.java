@@ -56,7 +56,10 @@ public class ClientDaoImpl implements ClientDao {
                         resultSet.getString("street"),
                         resultSet.getString("city"),
                         resultSet.getString("cityCode"),
-                        resultSet.getString("phoneNumber")));
+                        resultSet.getString("phoneNumber"),
+                        resultSet.getString("comments")
+
+                ));
             }
             statement.close();
         } catch (SQLException e) {
@@ -105,17 +108,9 @@ public class ClientDaoImpl implements ClientDao {
     }
 
     @Override
-    public boolean collectClient(String name, String nip) {
-        try {
-            PreparedStatement statement = connector.getConnection().prepareStatement(
-                    "SELECT name FROM client WHERE name=? AND nip=?");
-            statement.setString(1, name);
-            statement.setString(2, nip);
-            statement.execute();
-            statement.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+    public boolean showDetails(String name, String nip) {
+
+
 
         return false;
     }
